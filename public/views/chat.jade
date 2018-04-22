@@ -1,0 +1,20 @@
+extends ../template-full.jade
+
+block content
+    section.hero.is-primary
+        .hero-body
+            .container
+                h1.title Community Chat
+                h2.subtitle A place to chat about where to get free food
+    section.section(style='padding-top: 2em;')
+        .container(style='max-width: 440px;')
+            ul#messages
+                li Hi! You can ask around for free food here
+            .field.has-addons
+                .control(style='width: 100%;')
+                    input#chatMessage.input(type='text', placeholder='Hi! Have any food?')
+                .control
+                    a#chatSubmit.button.is-primary Submit
+            
+block footerScripts
+    script(src='/assets/chat.js')

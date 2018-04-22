@@ -9,10 +9,24 @@ router.get('/', function(req, res) {
     });
 });
 
+router.get('/login', (req, res) => {
+    res.render('views/authentication/login', {
+        title: "Login"
+    });
+});
+
+router.get('/signup', (req, res) => {
+   res.render('views/authentication/signup', {
+       title: "Signup"
+   }) 
+});
+
+router.get('/chat', (req, res) => {
+   res.render('views/chat', {
+       title: "Chat"
+   });
+});
+
+
+
 module.exports = router;
-
-      
-
-
-
-

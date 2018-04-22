@@ -1,0 +1,20 @@
+extends ../../template.jade
+
+block content
+    section.hero
+        .hero-body
+            .container.has-text-centered
+                .column.is-4.is-offset-4
+                    h3.title.has-text-grey Login
+                    p.subtitle.has-text-grey Please login to proceed.
+                    .box
+                        form
+                            .field
+                                .control
+                                    input.input(type='email', placeholder='Your Grinnell Email', autofocus='')
+                            .field
+                                .control
+                                    input.input(type='password', placeholder='Your Password')
+                            button.button.is-primary.is-fullwidth Login
+                    p.has-text-grey
+                        a(href='/signup') Sign Up Instead

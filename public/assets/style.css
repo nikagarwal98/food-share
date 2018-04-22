@@ -1,0 +1,25 @@
+.is-primary {
+    background-color: #9A4002 !important;
+    color: white;
+}
+a.is-primary:hover {
+    color: white !important;
+    text-decoration: underline;
+}
+
+/* CHAT */
+ul#messages li {
+    padding: 0.25em;
+    margin-bottom: 0.1em;
+}
+
+ul#messages li:nth-child(2n) {
+    background: #ffede1;
+}
+ul#messages li:nth-child(2n+1) {
+    background: #ffc9a5;
+}
+
+ul#messages {
+    margin-bottom: 1em;
+}

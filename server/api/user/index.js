@@ -2,14 +2,10 @@
 // =============================================================================
 var router = require('express').Router();              // get an instance of the express Router
 
-// connect to our MongoDB server
-var mongoose   = require('mongoose');
-mongoose.connect('mongodb://aryanmann:password1234@ds251849.mlab.com:51849/food-share-datapi', {})
-        .then(() => { console.log("connected!"); },
-            (error) => { console.log(error); });
 
 router.use('/status', require('./status'));
 router.use('/match', require('./match'));
+router.use('/signup', require('./signup'));
 
 var User       = require('../../../app/models/user');
 
@@ -19,7 +15,7 @@ router.get('/', (request, response) => {
              else { response.json({ success: true, message: "Retrieved a list of users!", users: users }); }
           })});
           
-router.post('/', (request, response) => {
+/*.post('/', (request, response) => {
           
           let name = request.body.name;
           let email = request.body.email;
@@ -43,6 +39,7 @@ router.post('/', (request, response) => {
                     else { response.json({ success: true, message: "A new user has been created!", user: newUser }); }
                   });
               }
-          })});
+          })});*/
+          
 
 module.exports = router;

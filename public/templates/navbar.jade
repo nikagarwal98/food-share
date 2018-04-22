@@ -1,0 +1,20 @@
+nav.navbar
+  .navbar-brand
+    a.navbar-item(href='/')
+      img(src='https://bulma.io/images/bulma-logo.png', alt='Bulma: a modern CSS framework based on Flexbox', width='112', height='28')
+    .navbar-burger.burger(data-target='mainNav')
+      span
+      span
+      span
+  #mainNav.navbar-menu
+    .navbar-start
+      a.navbar-item(href='/')
+        | Home
+      a.navbar-item(href='/profile')
+        | Profile
+      a.navbar-item(href='/chat')
+        | Chat
+    .navbar-end
+      a.navbar-item.is-primary(href='/login')
+        | Login 
+        
