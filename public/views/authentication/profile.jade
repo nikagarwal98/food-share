@@ -1,0 +1,34 @@
+extends ../../template-full.jade
+
+block content
+    section.hero.is-primary
+        .hero-body
+            h1.title Give us your deets!
+            h2.subtitle 
+                | In order to find better matches, we would like to know your current guest meals and containers. 
+    section.section
+        .container
+            .content
+                .field
+                  label.label Name
+                  .control
+                    input.input(type='text', value='#{name}', disabled)
+                .field
+                  label.label Containers
+                  .control.has-icons-left.has-icons-right
+                    input.input(type='number', min='0', max='21', placeholder='How many containers can you take out?', value='#{containers}')
+                    span.icon.is-small.is-left
+                      i.fas.fa-user
+                    span.icon.is-small.is-right
+                      i.fas.fa-check
+                .field
+                  label.label Guest Meals
+                  .control.has-icons-left.has-icons-right
+                    input.input(type='email', placeholder='How many guest meals do you have?', value='#{guestMeals}')
+                    span.icon.is-small.is-left
+                      i.fas.fa-envelope
+                    span.icon.is-small.is-right
+                      i.fas.fa-exclamation-triangle
+                .field.is-grouped
+                  .control
+                    button.button.is-primary Submit

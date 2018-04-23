@@ -6,12 +6,12 @@ var User       = require('../../../app/models/user');
 // POST a new status
 router.post('/', (request, response) => {
          
-         let newStatus = request.body.status;
+         let newContainer = request.body.container;
          let email = request.body.email; 
          
-         User.update({ email: email }, { status: newStatus }, {}, (err) => {
-             if (err) { response.json({ success: false, message: "Could not update status!", error: err }); }
-             else { response.json({ success: true, message: "Updated status to " + newStatus + "!" }); }
+         User.update({ email: email }, { container: newContainer }, {}, (err) => {
+             if (err) { response.json({ success: false, message: "Could not update container!", error: err }); }
+             else { response.json({ success: true, message: "Updated containers to " + newContainer + "!" }); }
          });
       });
       

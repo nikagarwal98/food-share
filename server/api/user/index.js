@@ -3,9 +3,11 @@
 var router = require('express').Router();              // get an instance of the express Router
 
 
+router.use('/container', require('./container'));
 router.use('/status', require('./status'));
 router.use('/match', require('./match'));
 router.use('/signup', require('./signup'));
+router.use('/login', require('./login'));
 
 var User       = require('../../../app/models/user');
 
@@ -41,5 +43,22 @@ router.get('/', (request, response) => {
               }
           })});*/
           
+
+router.delete('/:userId', (req, res, next) => {
+   User.remove({email: req.body.email}) 
+     .exec()
+     .then(result => {
+         res.status(200).json({
+             success: true, message: 'User deleted'
+         });
+     })
+     .catch(err => {
+         console.log(err);
+         res.status(500).json({
+             success: false, message: 'Could not delete user', error: err
+         });
+     });
+});
+
 
 module.exports = router;

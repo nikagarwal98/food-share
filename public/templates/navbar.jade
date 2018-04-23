@@ -1,8 +1,7 @@
 nav.navbar
   .navbar-brand
-    a.navbar-item(href='/')
-      img(src='https://bulma.io/images/bulma-logo.png', alt='Bulma: a modern CSS framework based on Flexbox', width='112', height='28')
-    .navbar-burger.burger(data-target='mainNav')
+    a.navbar-item(href='/') FoodShare
+    .navbar-burger.burger(data-for='mainNav')
       span
       span
       span
@@ -14,6 +13,8 @@ nav.navbar
         | Profile
       a.navbar-item(href='/chat')
         | Chat
+      a.navbar-item(href='/match')
+        | Match
     .navbar-end
       a.navbar-item.is-primary(href='/login')
         | Login 

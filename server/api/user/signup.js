@@ -22,43 +22,27 @@ router.post('/', (req, res, next)=> {
                             name: req.body.name,
                             email: req.body.email,
                             password: hash,
-                            status: "Idle",//req.body.status,
-                            container: 0//req.body.container
+                            status: req.body.status || "Idle",
+                            container: req.body.container || 0
                         });
-                        user
-                          .save()
-                          .then(result => {
+                        
+                        user.save()
+                            .then(result => {
                               console.log(result);
                               res.status(201).json({
                                   message: 'User created'
                               });
-                          })
-                          .catch(err => {
+                            })
+                            .catch(err => {
                               console.log(err);
                               res.status(500).json({
                                   error: err
                               });
-                          });
+});
                     }
                 })
             }
       });
-});
-
-router.delete('/:userId', (req, res, next) => {
-   User.remove({email: req.body.email}) 
-     .exec()
-     .then(result => {
-         res.status(200).json({
-             success: true, message: 'User deleted'
-         });
-     })
-     .catch(err => {
-         console.log(err);
-         res.status(500).json({
-             success: false, message: 'Could not delete user', error: err
-         });
-     });
 });
 
 module.exports = router;

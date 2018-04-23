@@ -1,0 +1,17 @@
+extends ../template-full.jade
+
+block content
+    section.hero.is-primary
+        .hero-body
+            h1.title Match
+            br
+            h2.subtitle 
+                | Wait a minute!
+                | We're finding you the right match..
+    section.section
+        #matchedUser.container
+            | Loading...
+                
+            
+block footerScripts
+    script(src='/assets/match.js')

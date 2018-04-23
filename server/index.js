@@ -4,7 +4,6 @@ var chalk = require('chalk');
 var volleyball = require('volleyball');
 var bodyParser = require('body-parser');
 var path = require("path");
-const jwt = require('jsonwebtoken');
 
 // Chat REQUIRES
 var http = require('http').Server(app);
@@ -18,6 +17,7 @@ mongoose.connect('mongodb://aryanmann:password1234@ds251849.mlab.com:51849/food-
 
 app.use(volleyball); // logging middleware
 app.use(bodyParser.json()); // body parsing middleware
+app.use(bodyParser.urlencoded());
 app.set('view engine', 'jade'); // set templating engine
 app.set('views', path.join(__dirname, '..', 'public')); //
 

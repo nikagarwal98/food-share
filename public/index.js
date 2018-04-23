@@ -21,10 +21,26 @@ router.get('/signup', (req, res) => {
    }) 
 });
 
+router.get('/profile', (req, res) => {
+   res.render('views/authentication/profile', {
+       title: "Profile",
+       
+       name: "Default Name",
+       containers: "10000",
+       guestMeals: "5"
+   }) 
+});
+
 router.get('/chat', (req, res) => {
    res.render('views/chat', {
        title: "Chat"
    });
+});
+
+router.get('/match', (req, res) => {
+   res.render('views/match', {
+       title: "Match"
+   }) 
 });
 
 
